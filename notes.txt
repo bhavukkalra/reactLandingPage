@@ -1,0 +1,92 @@
+1. May find JSX code written in ".jsx" extension files and sometimes also in ".js" extension files
+Both are correct and there is not standard practise.
+extension
+Its just a distinction in how the underlying build process are configured on which file  is expected
+(".js" or ".jsx") when using this jsx syntax in a file.
+
+
+2. May also find codebases where imports are explicit 
+import app from './App.jsx' 
+
+and you may find projects where the extension is not required at all.
+
+import app from './App'
+
+This is again is just a distinction on how the underlying build process is configured.
+
+BROWSERS DON'T UNDERSTAND THIS SYNTAX EITHER WAY :) 
+
+
+5. Any html written inside the defination of the React components opening and closing gets ommited
+
+<element> TEXT HERE will go away</element>
+
+
+
+To render the html passed inside the html tag, pass it as a prop.
+
+
+While when react sees the custom element to looks for its defination and starts rendering from there
+
+
+6. 
+
+In React, the HTML inside <Header> tags (or any custom component tags) doesn't get rendered directly as HTML because React treats <Header> as a custom React component, not as an HTML <header> element.
+
+To understand why this happens, consider the following points:
+
+Custom Components in React: When you use <Header> within JSX in a React component, React treats <Header> as a custom component. In React, components with names starting with a lowercase letter are assumed to be HTML elements (like <div>, <span>, <h1>, etc.), while components starting with an uppercase letter are treated as custom React components.
+
+Rendering of Custom Components: When React renders a component like <Header>, it looks for a React component with that name. If there's no such component defined within your React codebase, React won't render anything for <Header>.
+
+JSX Syntax and HTML: JSX looks like HTML but is actually a syntax extension of JavaScript. In JSX, elements written with lowercase (e.g., <div>, <h1>) represent HTML elements, while elements with uppercase (e.g., <Header>) are interpreted as custom React components.
+
+To render HTML content within a React component, you can use standard HTML tags directly, like <div>, <h1>, <p>, etc. If you want to render a custom component that wraps specific HTML content, you'll need to define that custom component in your React codebase. For example:
+
+jsx
+Copy code
+import React from 'react';
+
+// Define a custom Header component
+function Header(props) {
+  return <header>{props.children}</header>;
+}
+
+// Your main component
+function App() {
+  return (
+    <div>
+      <Header>This is text inside header</Header>
+      <main>
+        <h2>Time to get started!</h2>
+      </main>
+    </div>
+  );
+}
+
+export default App;
+In this example, <Header> is defined as a custom React component that renders its children inside an HTML <header> element. The text "This is text inside header" will be passed to the children prop of the Header component and rendered within the <header> element.
+
+If you intend to render plain HTML content within a React component without creating a custom component, you can use JSX directly with standard HTML tags (e.g., <div>, <header>, <h1>, etc.) to achieve the desired rendering.
+
+1. Advantages of using react
+
+- Helps create wesbites where there are a lot of moving parts (just defin the target state and how one state changes to another)
+- Helps modularize the codebase. instead of handling just one large html file. We can modularize our app into various components. and the best part? 
+components can be re-used. As react treats a webpage as a component tree. with a root component at the centre which gets injected into the html root div.
+It renderes the root component (And also rendering any nested components it may have)
+
+[Paste component tree diagram here]
+
+
+
+What does react does with the components
+
+It derives a component tree. A tree is what tells React on how different components are related and
+how the UI should look like
+
+
+that's then used to perform commands that update the website DOM
+
+
+
