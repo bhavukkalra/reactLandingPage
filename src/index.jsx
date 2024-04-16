@@ -13,8 +13,6 @@ but in jsx they do work
 Q/A
 */
 
-
-
 import "./index.css";
 
 const entryPoint = document.getElementById("root");
