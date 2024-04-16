@@ -89,4 +89,23 @@ how the UI should look like
 that's then used to perform commands that update the website DOM
 
 
+More info on the bundling process
+- handles immports such as css in jsx files
+- Not able to accurately handle image files being used in plain html vi img src
+(Must be done via imports)
+8. Using in JSX  imports 
+
+
+
+
+
+---------------------------------------------Seperate Page
+
+Props lifecycle
+
+JSX Code that uses a component
+[Set component input data via "custom HTML attributes (props)"]   Set Props => Component (Defines internal logic + JSX code that should be rendered)
+
+=> Receive props    (Component function) (Receives props parameter with the configuration data)
+
 

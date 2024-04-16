@@ -3,6 +3,7 @@ Q/A importing an Image file to react project, Handled by the build process
 */
 
 import reactImg from './assets/react-core-concepts.png'
+import componentsImg from './assets/components.png'
 
 /*
 Different between using class and extending component from react and 
@@ -59,11 +60,71 @@ function Header() {
 Both acceptable
 */
 
+/*
+- props are gonna be passed from HTML to here.
+
+- props are set by React. As its the React workflow to call these custom components, when 
+these components are used 
+
+- attributes set by the user while using the component. Will be sent to the component function
+by React
+
+*/
+
+
+ function CoreConcept(props){
+  return (
+    
+  <li>
+
+    <img src={props.img} alt="Components image" />
+    <h3>{props.title}</h3>
+    <p>{props.description}</p>
+
+
+
+
+
+    
+  </li>
+
+
+
+  )
+
+
+
+ }
+
+
 function App() {
   return (
     <div>
       <Header>This is text inside header</Header>
       <main>
+        <section id="core-concepts">
+          <h2>Core Concepts</h2>
+
+          <ul>
+            <CoreConcept
+              title="Components"
+              description="The core UI building block"
+              img={componentsImg}
+            />
+
+            <CoreConcept
+              title="Components"
+              description="The core UI building block"
+              img={componentsImg}
+            />
+
+            <CoreConcept
+              title="Components"
+              description="The core UI building block"
+              img={componentsImg}
+            />
+          </ul>
+        </section>
         <h2>Time to get started!</h2>
       </main>
     </div>
