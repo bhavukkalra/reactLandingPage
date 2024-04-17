@@ -66,13 +66,26 @@ by React
 
 */
 
+/*
+props could be destructured
 
- function CoreConcept(props) {
+props -- {
+  image: [],
+  title: [],
+  description: []
+
+}
+
+{image, title, description}
+
+*/
+
+ function CoreConcept({image, title, description}) {
    return (
      <li>
-       <img src={props.img} alt="Components image" />
-       <h3>{props.title}</h3>
-       <p>{props.description}</p>
+       <img src={image} alt="Components image" />
+       <h3>{title}</h3>
+       <p>{description}</p>
      </li>
    );
  }
@@ -87,22 +100,19 @@ function App() {
           <h2>Core Concepts</h2>
 
           <ul>
-            <CoreConcept
-              title={CORE_CONCEPTS[0].title}
-              description={CORE_CONCEPTS[0].description}
-              img={CORE_CONCEPTS[0].image}
+            <CoreConcept {...CORE_CONCEPTS[0]}
+            />
+
+            <CoreConcept {...CORE_CONCEPTS[1]}
+            />
+
+<CoreConcept {...CORE_CONCEPTS[2]}
             />
 
             <CoreConcept
-              title={CORE_CONCEPTS[1].title}
-              description={CORE_CONCEPTS[1].description}
-              img={CORE_CONCEPTS[1].image}
-            />
-
-            <CoreConcept
-              title={CORE_CONCEPTS[2].title}
-              description={CORE_CONCEPTS[2].description}
-              img={CORE_CONCEPTS[2].image}
+              title={CORE_CONCEPTS[3].title}
+              description={CORE_CONCEPTS[3].description}
+              image={CORE_CONCEPTS[3].image}
             />
           </ul>
         </section>
