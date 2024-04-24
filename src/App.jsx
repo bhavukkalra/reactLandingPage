@@ -31,6 +31,7 @@ import {CORE_CONCEPTS} from './data'
 import Header from './components/Header/Header';
 import CustomComponent from './components/CustomConcept/CutomComponent'
 import CoreConcept from './components/CoreConcept/CoreConcept';
+import TabButton from './components/TabButton/TabButton';
 
 
 function App() {
@@ -60,6 +61,19 @@ function App() {
           </ul>
         </section>
         <h2>Time to get started!</h2>
+
+
+        <section id='examples'>
+          <menu>
+            <TabButton>JSX</TabButton>
+
+
+          </menu>
+
+
+
+
+        </section>
       </main>
     </div>
   );
