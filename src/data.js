@@ -9,11 +9,6 @@ import configImg from "./assets/config.png";
 
 export const CORE_CONCEPTS = [
   {
-    image: reactImg,
-    title: "React",
-    description: "React is good",
-  },
-  {
     image: componentsImg,
     title: "Compnents",
     description: "Basic Building block",
