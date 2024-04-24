@@ -30,8 +30,22 @@ import reactAtom from './path/to/atom/image'
 */
 
 
-import reactImg from "../assets/react-core-concepts.png";
+import reactImg from "../../assets/react-core-concepts.png";
 
+/*
+These css files aren't scoped to only this component.
+i.e if <header><header/>
+
+is used somewhere else in the component. It will be applied to it as well.
+
+i.e these css imports inside components are actually global scope
+
+Solution later on how these styles can be scoped later
+
+
+*/
+
+import './Header.css'
 const reactDescriptions = ['Fundamental', 'Crucial', 'Core']
 
 function genRandomInt(max){

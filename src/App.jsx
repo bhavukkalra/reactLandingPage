@@ -28,9 +28,9 @@ props.image, props.title, props.description
 */
 
 import {CORE_CONCEPTS} from './data'
-import Header from './components/Header';
-import CustomComponent from './components/CutomComponent'
-import CoreConcept from './components/CoreConcept';
+import Header from './components/Header/Header';
+import CustomComponent from './components/CustomConcept/CutomComponent'
+import CoreConcept from './components/CoreConcept/CoreConcept';
 
 
 function App() {
