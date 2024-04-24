@@ -108,4 +108,9 @@ JSX Code that uses a component
 
 => Receive props    (Component function) (Receives props parameter with the configuration data)
 
+------
+
+How to import images in react?
+By importing the image a production safe path gets created under the hood
+
 

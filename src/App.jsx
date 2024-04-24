@@ -67,6 +67,8 @@ by React
 */
 
 /*
+
+
 props could be destructured
 
 props -- {
@@ -76,7 +78,8 @@ props -- {
 
 }
 
-{image, title, description}
+{image, title, description} or use
+props.image, props.title, props.description
 
 */
 
@@ -90,6 +93,17 @@ props -- {
    );
  }
 
+
+function CustomComponent(props){
+  // console.log(`Input is - ${priority}`);
+  const {priority} = props;
+  console.log(`priority - ${priority}`)
+
+  console.log(props)
+  return (
+    <p>This is something</p>
+  )
+}
 
 function App() {
   return (
@@ -111,6 +125,10 @@ function App() {
               description={CORE_CONCEPTS[3].description}
               image={CORE_CONCEPTS[3].image}
             />
+
+            <CustomComponent priority={5}/>
+
+          {/* <CoreConcept singleJson={CORE_CONCEPTS[2]} /> (function ({...coreConcept})) */}
           </ul>
         </section>
         <h2>Time to get started!</h2>
