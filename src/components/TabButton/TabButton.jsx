@@ -9,20 +9,22 @@ attributes to pass the data to the component
 import './TabButton.css'
 // Amazing styles to button styles
 
-export default function TabButton({children}){
+export default function TabButton({children, onSelect}){
   /*
 Advantage of defining the event listener inside a component 
 is that they have access to the components prop and state
-*/
 
-  function handleClick() {
-    console.log(`Clicked`);
-  }
+
+onClick as a function is defined in reactt only for preDefined components
+i.e regular html tags not for custom components
+<li></li> => Also a react pre-defined component
+
+*/
 
   // console.log(props)
   return (
     <li>
-      <button onClick={handleClick}>{children}</button>
+      <button onClick={onSelect}>{children}</button>
     </li>
   );
 }

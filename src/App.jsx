@@ -35,6 +35,11 @@ import TabButton from './components/TabButton/TabButton';
 
 
 function App() {
+  function handleSelect(){
+    console.log(`This is selected`);
+  }
+
+
   return (
     <div>
       <Header>This is text inside header</Header>
@@ -69,10 +74,10 @@ function App() {
 
         <section id="examples">
           <menu>
-            <TabButton>Components</TabButton>
-            <TabButton>JSX</TabButton>
-            <TabButton>Props</TabButton>
-            <TabButton>State</TabButton>
+            <TabButton onSelect={handleSelect}>Components</TabButton>
+            <TabButton onSelect={handleSelect}>JSX</TabButton>
+            <TabButton onSelect={handleSelect}>Props</TabButton>
+            <TabButton onSelect={handleSelect}>State</TabButton>
           </menu>
         </section>
       </main>
