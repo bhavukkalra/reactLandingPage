@@ -55,7 +55,20 @@ function App() {
               image={CORE_CONCEPTS[2].image}
             />
 
-            <CustomComponent priority={5}/>
+            <CustomComponent priority={5}> 
+            <p>
+
+              this is inside p
+            </p>
+
+            <p>
+            <a href="inside p">inside p a</a>
+
+            </p>
+            <a href="#">This is inside anchor</a>
+            
+            
+            </CustomComponent>
 
           {/* <CoreConcept singleJson={CORE_CONCEPTS[2]} /> (function ({...coreConcept})) */}
           </ul>
