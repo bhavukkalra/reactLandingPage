@@ -43,8 +43,6 @@ function App() {
           <h2>Core Concepts</h2>
 
           <ul>
-           
-
             <CoreConcept {...CORE_CONCEPTS[0]} />
 
             <CoreConcept {...CORE_CONCEPTS[1]} />
@@ -55,37 +53,27 @@ function App() {
               image={CORE_CONCEPTS[2].image}
             />
 
-            <CustomComponent priority={5}> 
-            <p>
+            <CustomComponent priority={5}>
+              <p>this is inside p</p>
 
-              this is inside p
-            </p>
-
-            <p>
-            <a href="inside p">inside p a</a>
-
-            </p>
-            <a href="#">This is inside anchor</a>
-            
-            
+              <p>
+                <a href="inside p">inside p a</a>
+              </p>
+              <a href="#">This is inside anchor</a>
             </CustomComponent>
 
-          {/* <CoreConcept singleJson={CORE_CONCEPTS[2]} /> (function ({...coreConcept})) */}
+            {/* <CoreConcept singleJson={CORE_CONCEPTS[2]} /> (function ({...coreConcept})) */}
           </ul>
         </section>
         <h2>Time to get started!</h2>
 
-
-        <section id='examples'>
+        <section id="examples">
           <menu>
+            <TabButton>Components</TabButton>
             <TabButton>JSX</TabButton>
-
-
+            <TabButton>Props</TabButton>
+            <TabButton>State</TabButton>
           </menu>
-
-
-
-
         </section>
       </main>
     </div>
