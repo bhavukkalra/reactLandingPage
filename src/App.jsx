@@ -35,20 +35,22 @@ import TabButton from './components/TabButton/TabButton';
 
 
 function App() {
-  function handleSelect(section){
-    if(section == "JSX"){
-      console.log("JSX")
-    } else if(section == "Components"){
-      console.log("Components")
-    }else if(section == "Props"){
-      console.log("Props")
-    }else if(section == "State"){
-      console.log("State")
-    }
+  /*
+        Here just re-assigning the varibale to a new value everytime won't work.
+
+     As react only renders each component once by default, 
+    To re-render a component we need to introduce state
+
+
+    */
+  let dynamicContentVaribale = "Imagine an explanation of a component here";
+
+  function handleSelect(section) {
+    console.log(`Pressed - ${section}`);
+    dynamicContentVaribale = section;
 
     // console.log(`This is selected`);
   }
-
 
   return (
     <div>
@@ -84,7 +86,7 @@ function App() {
 
         <section id="examples">
           <menu>
-{/* 
+            {/* 
 
 <TabButton onSelect={handleSelect}>Components</TabButton>
 <TabButton onSelect={handleSelect()}>Components</TabButton> Wrong 
@@ -113,13 +115,20 @@ OR
 
 */}
 
-
-
-            <TabButton onSelect={() => handleSelect("Components")}>Components</TabButton>
+            <TabButton onSelect={() => handleSelect("Components")}>
+              Components
+            </TabButton>
             <TabButton onSelect={() => handleSelect("JSX")}>JSX</TabButton>
             <TabButton onSelect={() => handleSelect("Props")}>Props</TabButton>
-            <TabButton onSelect={function () {handleSelect("State")}}>State</TabButton>
+            <TabButton
+              onSelect={function () {
+                handleSelect("State");
+              }}
+            >
+              State
+            </TabButton>
           </menu>
+          {dynamicContentVaribale}
         </section>
       </main>
     </div>
