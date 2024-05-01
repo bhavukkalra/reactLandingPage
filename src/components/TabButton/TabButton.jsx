@@ -10,6 +10,8 @@ import './TabButton.css'
 // Amazing styles to button styles
 
 export default function TabButton({children, onSelect}){
+  console.log("TAB COMPONENT RENDERING")
+
   /*
 Advantage of defining the event listener inside a component 
 is that they have access to the components prop and state

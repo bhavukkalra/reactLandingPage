@@ -32,9 +32,22 @@ import Header from './components/Header/Header';
 import CustomComponent from './components/CustomConcept/CutomComponent'
 import CoreConcept from './components/CoreConcept/CoreConcept';
 import TabButton from './components/TabButton/TabButton';
+import { useState } from 'react';
+
+/*
+Usestate usage
+
+1. Must be used in a component
+2. Must be defined at inside the component
+3. Must not be defined inside a nested function in the component except when 
+using inside custom hooks 
+
+*/
 
 
 function App() {
+
+  console.log("APP COMPONENT RENDERING")
   /*
         Here just re-assigning the varibale to a new value everytime won't work.
 
@@ -43,11 +56,15 @@ function App() {
 
 
     */
-  let dynamicContentVaribale = "Imagine an explanation of a component here";
+  // let dynamicContentVaribale = "Imagine an explanation of a component here";
+  const [selectedTopic, setSelectedTopic] = useState("Please select a topic from above");
+
+
 
   function handleSelect(section) {
     console.log(`Pressed - ${section}`);
-    dynamicContentVaribale = section;
+    // dynamicContentVaribale = section;
+      setSelectedTopic(section);
 
     // console.log(`This is selected`);
   }
@@ -128,7 +145,7 @@ OR
               State
             </TabButton>
           </menu>
-          {dynamicContentVaribale}
+          {selectedTopic}
         </section>
       </main>
     </div>
