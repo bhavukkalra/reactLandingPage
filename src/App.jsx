@@ -33,6 +33,7 @@ import CustomComponent from './components/CustomConcept/CutomComponent'
 import CoreConcept from './components/CoreConcept/CoreConcept';
 import TabButton from './components/TabButton/TabButton';
 import { useState } from 'react';
+import { EXAMPLES } from './data';
 
 /*
 Usestate usage
@@ -57,7 +58,7 @@ function App() {
 
     */
   // let dynamicContentVaribale = "Imagine an explanation of a component here";
-  const [selectedTopic, setSelectedTopic] = useState("Please select a topic from above");
+  let [selectedTopic, setSelectedTopic] = useState("components");
 
 
 
@@ -132,20 +133,27 @@ OR
 
 */}
 
-            <TabButton onSelect={() => handleSelect("Components")}>
+            <TabButton onSelect={() => handleSelect("components")}>
               Components
             </TabButton>
-            <TabButton onSelect={() => handleSelect("JSX")}>JSX</TabButton>
-            <TabButton onSelect={() => handleSelect("Props")}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton
               onSelect={function () {
-                handleSelect("State");
-              }}
-            >
+                handleSelect("state");
+            }}>
               State
             </TabButton>
           </menu>
-          {selectedTopic}
+          <div id="tab-content">
+          {console.log("Console this bitch")}
+            {console.log(EXAMPLES.selectedTopic)}
+            <h3>{selectedTopic}</h3>
+            <p>{selectedTopic}</p>
+            <pre>
+              <code>{EXAMPLES.selectedTopic}</code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>
