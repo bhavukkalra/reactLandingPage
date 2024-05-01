@@ -35,8 +35,18 @@ import TabButton from './components/TabButton/TabButton';
 
 
 function App() {
-  function handleSelect(){
-    console.log(`This is selected`);
+  function handleSelect(section){
+    if(section == "JSX"){
+      console.log("JSX")
+    } else if(section == "Components"){
+      console.log("Components")
+    }else if(section == "Props"){
+      console.log("Props")
+    }else if(section == "State"){
+      console.log("State")
+    }
+
+    // console.log(`This is selected`);
   }
 
 
@@ -74,10 +84,41 @@ function App() {
 
         <section id="examples">
           <menu>
-            <TabButton onSelect={handleSelect}>Components</TabButton>
-            <TabButton onSelect={handleSelect}>JSX</TabButton>
-            <TabButton onSelect={handleSelect}>Props</TabButton>
-            <TabButton onSelect={handleSelect}>State</TabButton>
+{/* 
+
+<TabButton onSelect={handleSelect}>Components</TabButton>
+<TabButton onSelect={handleSelect()}>Components</TabButton> Wrong 
+
+As this will get executed as soon as the component gets rendered
+
+Can't pass in custom values to the function defintation 
+
+
+To pass in cutom values without the function getting executed
+
+
+wrap the function inside an anonymous function
+
+
+<TabButton onSelect={() => handleSelect('jsx')}>Components</TabButton>
+
+OR
+
+<TabButton onSelect={function() {handleSelect('jsx')}}>Components</TabButton>
+
+
+
+
+
+
+*/}
+
+
+
+            <TabButton onSelect={() => handleSelect("Components")}>Components</TabButton>
+            <TabButton onSelect={() => handleSelect("JSX")}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect("Props")}>Props</TabButton>
+            <TabButton onSelect={function () {handleSelect("State")}}>State</TabButton>
           </menu>
         </section>
       </main>
