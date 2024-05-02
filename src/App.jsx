@@ -147,11 +147,11 @@ OR
           </menu>
           <div id="tab-content">
           {console.log("Console this bitch")}
-            {console.log(EXAMPLES.selectedTopic)}
-            <h3>{selectedTopic}</h3>
+            {console.log(EXAMPLES[selectedTopic].title)}
+            <h3>{EXAMPLES[selectedTopic].description}</h3>
             <p>{selectedTopic}</p>
             <pre>
-              <code>{EXAMPLES.selectedTopic}</code>
+              <code>{EXAMPLES[selectedTopic].code}</code>
             </pre>
           </div>
         </section>

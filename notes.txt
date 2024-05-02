@@ -114,3 +114,20 @@ How to import images in react?
 By importing the image a production safe path gets created under the hood
 
 
+------------------
+
+EXAMPLES[selectedTopic].code
+
+Difference between 
+
+- EXAMPLES.selectedTopic.code
+
+and 
+
+- EXAMPLES.selectedTopic.code
+
+for accessing Object in JS
+
+
+
+
