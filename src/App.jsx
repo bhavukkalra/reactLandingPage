@@ -58,7 +58,8 @@ function App() {
 
     */
   // let dynamicContentVaribale = "Imagine an explanation of a component here";
-  let [selectedTopic, setSelectedTopic] = useState("components");
+  let [selectedTopic, setSelectedTopic] = useState();
+  // () => undefined state by defauly
 
 
 
@@ -103,8 +104,7 @@ function App() {
         <h2>Time to get started!</h2>
 
         <section id="examples">
-          <menu>
-            {/* 
+          {/* 
 
 <TabButton onSelect={handleSelect}>Components</TabButton>
 <TabButton onSelect={handleSelect()}>Components</TabButton> Wrong 
@@ -133,6 +133,7 @@ OR
 
 */}
 
+          <menu>
             <TabButton onSelect={() => handleSelect("components")}>
               Components
             </TabButton>
@@ -141,19 +142,23 @@ OR
             <TabButton
               onSelect={function () {
                 handleSelect("state");
-            }}>
+              }}
+            >
               State
             </TabButton>
           </menu>
-          <div id="tab-content">
-          {console.log("Console this bitch")}
-            {console.log(EXAMPLES[selectedTopic].title)}
-            <h3>{EXAMPLES[selectedTopic].description}</h3>
-            <p>{selectedTopic}</p>
-            <pre>
-              <code>{EXAMPLES[selectedTopic].code}</code>
-            </pre>
-          </div>
+
+          {selectedTopic ? (
+            <div id="tab-content">
+              <h3>{EXAMPLES[selectedTopic].title}</h3>
+              <p>{EXAMPLES[selectedTopic].description}</p>
+              <pre>
+                <code>{EXAMPLES[selectedTopic].code}</code>
+              </pre>
+            </div>
+          ) : null}
+
+          {!selectedTopic ? <p>Please select some topic to show </p> : null}
         </section>
       </main>
     </div>
