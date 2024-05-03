@@ -63,12 +63,25 @@ function App() {
 
   let contentToRender = <p>Please select some topic to show </p>
 
+  if (selectedTopic) {
+    contentToRender = (
+      <div id="tab-content">
+        <h3>{EXAMPLES[selectedTopic].title}</h3>
+        <p>{EXAMPLES[selectedTopic].description}</p>
+        <pre>
+          <code>{EXAMPLES[selectedTopic].code}</code>
+        </pre>
+      </div>
+    );
+  }
+  
+
+
   function handleSelect(section) {
     console.log(`Pressed - ${section}`);
     // dynamicContentVaribale = section;
     
       setSelectedTopic(section);
-
 
       // Why changing here the global varibale doesn't gets reflected??
       /*
@@ -81,26 +94,16 @@ function App() {
         
         To make it work. 
 
-
         Change this variable inside the global scope i.e inside App and outside handleselect
-
-
-
-
       */
 
-      contentToRender = <div id="tab-content">
-              <h3>{EXAMPLES[section].title}</h3>
-              <p>{EXAMPLES[section].description}</p>
-              <pre>
-                <code>{EXAMPLES[section].code}</code>
-              </pre>
-            </div>
-
-
-      
-
-    // console.log(`This is selected`);
+  //       contentToRender = <div id="tab-content">
+  //       <h3>{EXAMPLES[section].title}</h3>
+  //       <p>{EXAMPLES[section].description}</p>
+  //       <pre>
+  //         <code>{EXAMPLES[section].code}</code>
+  //       </pre>
+  //     </div>
   }
 
   return (
