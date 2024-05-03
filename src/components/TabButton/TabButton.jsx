@@ -9,7 +9,7 @@ attributes to pass the data to the component
 import './TabButton.css'
 // Amazing styles to button styles
 
-export default function TabButton({children, onSelect}){
+export default function TabButton({children, onSelect, isSelected}){
   console.log("TAB COMPONENT RENDERING")
 
   /*
@@ -26,7 +26,7 @@ i.e regular html tags not for custom components
   // console.log(props)
   return (
     <li>
-      <button onClick={onSelect}>{children}</button>
+      <button className={isSelected ? 'active': undefined} onClick={onSelect}>{children}</button>
     </li>
   );
 }
