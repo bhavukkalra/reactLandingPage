@@ -156,9 +156,7 @@ OR
                 <code>{EXAMPLES[selectedTopic].code}</code>
               </pre>
             </div>
-          ) : null}
-
-          {!selectedTopic ? <p>Please select some topic to show </p> : null}
+          ) : <p>Please select some topic to show </p>}
         </section>
       </main>
     </div>
