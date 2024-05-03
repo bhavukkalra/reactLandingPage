@@ -114,15 +114,10 @@ function App() {
           <h2>Core Concepts</h2>
 
           <ul>
-            <CoreConcept {...CORE_CONCEPTS[0]} />
+            {/* Output below as an array {['hello']} a valid JSX key is used by React for rendering purposes
+            to uniquely identify each attribute in an array*/ }
 
-            <CoreConcept {...CORE_CONCEPTS[1]} />
-
-            <CoreConcept
-              title={CORE_CONCEPTS[2].title}
-              description={CORE_CONCEPTS[2].description}
-              image={CORE_CONCEPTS[2].image}
-            />
+            {CORE_CONCEPTS.map((currentDataJson) => <CoreConcept key={currentDataJson.title} {...currentDataJson}/>)}
 
             <CustomComponent priority={5}>
               <p>this is inside p</p>
