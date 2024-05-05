@@ -127,7 +127,40 @@ and
 - EXAMPLES.selectedTopic.code
 
 for accessing Object in JS
+---------------------------------------------------
 
+Using JSX is just a choice. 
+React project can be built without as well. If you don't wanna use a build process with your application 
+
+
+<div id="main">
+  <p> This is P </p>
+
+</div>
+
+
+Valid Alternate (Doesn't require a build process, but harder to read)
+
+React.createElement('div', { id: 'main' },
+  // Create the child p tag
+  React.createElement('p', null, 'This is a child paragraph')
+);
+--------------------------
+
+
+return (
+  <ul> </ul>
+  <li> </li>
+
+)
+
+return (a b);
+
+Can't return two values from a return statement
+
+
+
+Fragment won;t render an un-necessary div on the screen
 
 
 

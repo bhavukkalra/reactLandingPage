@@ -33,6 +33,7 @@ import CustomComponent from './components/CustomConcept/CutomComponent'
 import CoreConcept from './components/CoreConcept/CoreConcept';
 import TabButton from './components/TabButton/TabButton';
 import { useState } from 'react';
+import { Fragment } from 'react';
 import { EXAMPLES } from './data';
 
 /*
@@ -107,7 +108,7 @@ function App() {
   }
 
   return (
-    <div>
+      <Fragment>
       <Header>This is text inside header</Header>
       <main>
         <section id="core-concepts">
@@ -181,7 +182,8 @@ OR
           {contentToRender}
         </section>
       </main>
-    </div>
+      </Fragment>
+    
   );
 }
 
