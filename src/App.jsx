@@ -108,7 +108,7 @@ function App() {
   }
 
   return (
-      <Fragment>
+      <>
       <Header>This is text inside header</Header>
       <main>
         <section id="core-concepts">
@@ -182,7 +182,7 @@ OR
           {contentToRender}
         </section>
       </main>
-      </Fragment>
+      </>
     
   );
 }
